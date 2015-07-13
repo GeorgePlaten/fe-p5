@@ -124,7 +124,7 @@ var app = app || {
     };
 
     Sighting.prototype.select = function () {
-        $('#addNew').fadeOut();
+        $('#add-new').fadeOut();
         app.data.currentSighting && app.data.currentSighting.deselect();
         app.data.currentSighting = this;
         this.marker.getIcon() && this.marker.setIcon(this.marker.icons.selected);
@@ -302,14 +302,14 @@ var app = app || {
             url: baseUrl + '&titles=' + pages,
             dataType: 'jsonp',
             success: function (data) {
-                $('#addNew').prop('disabled', false).addClass('mdl-button--accent');
-                $('#readOnly').hide();
+                $('#add-new').prop('disabled', false).addClass('mdl-button--accent');
+                $('#read-only').hide();
                 processWikimediaData(data);
                 callback && callback();
             },
             error: function () {
-                $('#addNew').prop('disabled', true).removeClass('mdl-button--accent');
-                $('#readOnly').show();
+                $('#add-new').prop('disabled', true).removeClass('mdl-button--accent');
+                $('#read-only').show();
             }
         });
     };

@@ -53,9 +53,9 @@
                 mouseout: $parent.mapMarkerPuncture
               },
               value: drawMapMarker()">
-              <p class="speciesName" data-bind="text: species">Species</p>
+              <p class="species-name" data-bind="text: species">Species</p>
               <p class="taxon" data-bind="text: taxon">Taxonomy</p>
-              <p class="commonNames" data-bind="text: commonNames">Common Names</p>
+              <p class="common-names" data-bind="text: commonNames">Common Names</p>
             </li>
           </ul>
         </div>
@@ -80,21 +80,21 @@
         </ul>
       </div>
       <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored
-        mdl-button--raised mdl-js-ripple-effect" id="saveNew">
+        mdl-button--raised mdl-js-ripple-effect" id="save-new">
         <i class="material-icons">done</i>
       </button>
       <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent
-        mdl-button--raised mdl-js-ripple-effect" id="addNew">
+        mdl-button--raised mdl-js-ripple-effect" id="add-new">
         <i class="material-icons">add</i>
       </button>
     </div>
     
     <!-- Google Maps InfoWindow Snippets -->
-    <div id="newSightingInfoWindow">
+    <div id="new-sighting-info-window">
       <p>Move the marker to the location you want.</p>
-      <p class="mdl-textfield mdl-js-textfield textfield-demo newName">
-        <input class="mdl-textfield__input" type="text" id="newName" pattern="[A-Z,a-z, ]*" placeholder="Try 'Canis lupus'" />
-        <label class="mdl-textfield__label" for="newName">
+      <p class="mdl-textfield mdl-js-textfield textfield-demo new-name">
+        <input class="mdl-textfield__input" type="text" id="new-name" pattern="[A-Z,a-z, ]*" placeholder="Try 'Canis lupus'" />
+        <label class="mdl-textfield__label" for="new-name">
           <i class="material-icons">add_circle</i>
         </label>
       </p>
@@ -111,11 +111,11 @@
         <span class="mdl-button--raised">
           <i class="material-icons">done</i>
           New <em>Firstname lastname</em> added.
-          <button class="mdl-button mdl-js-button mdl-button--primary" id="messageButton">undo</button>
+          <button class="mdl-button mdl-js-button mdl-button--primary" id="message-button">undo</button>
         </span>
       </p>
     </div>
-    <div id="readOnly">
+    <div id="read-only">
       <p class="dialog mdl-button--raised disabled">READ-ONLY MODE
         <br>Adding new sightings is disabled because Wikipedia is unavailable</p>
     </div>

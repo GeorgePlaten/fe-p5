@@ -118,7 +118,7 @@ var app = app || {};
                 infowindow.open(this.map, marker);
             } else if (currentContent === newContent &&
                 app.data.currentSighting.marker === marker) {
-                $('#addNew').fadeIn();
+                $('#add-new').fadeIn();
                 // clear content with close to enable toggle logic
                 infowindow.setContent('');
                 infowindow.close();
@@ -134,7 +134,7 @@ var app = app || {};
 
     // add listener to InfoWindow close button to clear content too
     google.maps.event.addListener(infowindow, 'closeclick', function () {
-        $('#addNew').fadeIn();
+        $('#add-new').fadeIn();
         infowindow.setContent('');
         app.viewModel.photos(null); // fix this
         app.data.currentSighting.deselect(true);
@@ -153,7 +153,7 @@ var app = app || {};
     };
 
     app.saveNewSighting = function () {
-        var name = $('#newName')[0].value;
+        var name = $('#new-name')[0].value;
         if (name.length < 3) {
             alert('That doesn\'t appear to be a valid name.');
             return;
@@ -215,13 +215,13 @@ var app = app || {};
 
         app.newEntryInfoWindow.setContent('');
         app.newEntryMarker.setMap(null);
-        $('#saveNew').fadeOut();
-        $('#addNew').fadeIn('slow');
+        $('#save-new').fadeOut();
+        $('#add-new').fadeIn('slow');
     };
 
     app.newSighting = function () {
-        $('#addNew').fadeOut();
-        $('#saveNew').fadeIn('slow');
+        $('#add-new').fadeOut();
+        $('#save-new').fadeIn('slow');
         if (app.data.currentSighting) {
             app.data.currentSighting.deselect();
             infowindow.close();
@@ -237,20 +237,20 @@ var app = app || {};
 
         // Render the InfoWindow
         app.newEntryInfoWindow = new google.maps.InfoWindow();
-        app.newEntryInfoWindow.setContent($('#newSightingInfoWindow').html());
+        app.newEntryInfoWindow.setContent($('#new-sighting-info-window').html());
         app.newEntryInfoWindow.open(this.map.map, app.newEntryMarker);
 
         // add listener to InfoWindow abort new Entry function
         google.maps.event.addListener(app.newEntryInfoWindow, 'closeclick', function () {
-            $('#saveNew').fadeOut();
-            $('#addNew').fadeIn('slow');
+            $('#save-new').fadeOut();
+            $('#add-new').fadeIn('slow');
             app.newEntryInfoWindow.close();
             app.newEntryMarker.setMap(null);
             return;
         });
 
         // add listener to InfoWindow input to save new Entry with Enter key (13)
-        $('#newName').keyup(function (e) {
+        $('#new-name').keyup(function (e) {
             e.which === 13 && app.saveNewSighting();
         });
 

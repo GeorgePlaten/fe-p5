@@ -23,13 +23,13 @@ var app = app || {
         }, 8000);
 
     // UI Buttons
-    $('#addNew').on({'click': function () {
+    $('#add-new').on({'click': function () {
         app.newSighting();
     }});
-    $('#saveNew').on({'click': function () {
+    $('#save-new').on({'click': function () {
         app.saveNewSighting();
     }});
-    $('#messageButton').on({'click': function () {
+    $('#message-button').on({'click': function () {
         app.undoLastEntry();
     }});
 
