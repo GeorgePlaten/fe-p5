@@ -1,0 +1,22 @@
+https://developers.google.com/web/tools/starter-kit/
+http://todomvc.com/examples/backbone/
+http://todomvc.com/examples/knockoutjs/
+http://knockoutjs.com/documentation/introduction.html
+http://api.jquery.com/
+https://www.flickr.com/services/api/
+https://www.mediawiki.org/wiki/API:Tutorial
+https://developer.mozilla.org/en-US/
+http://stackoverflow.com/questions/tagged/javascript
+http://www.getmdl.io/started/
+https://css-tricks.com/
+https://thenounproject.com/
+    https://thenounproject.com/evanmacdonald
+    https://thenounproject.com/uffou
+    https://thenounproject.com/imicons
+    https://thenounproject.com/DmitryBaranovskiy
+    https://thenounproject.com/sthalme
+    https://thenounproject.com/grrrauf
+    https://thenounproject.com/felipeaccorsi
+    https://thenounproject.com/skiimo
+    https://thenounproject.com/diegonaive
+    https://thenounproject.com/AlexAlmqvist

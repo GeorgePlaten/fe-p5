@@ -1,0 +1,209 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Serif', Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+#map-canvas {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #DDD;
+}
+div {
+    float: left
+}
+h3 {
+    font-size: 25px;
+    line-height: 0;
+    font-style: italic;
+}
+p,
+ul {
+    margin: 2px;
+    padding: 0;
+    line-height: 18px;
+}
+ul {
+    list-style: none;
+    width: 255px;
+    height: 100%
+}
+#filter-list {
+    position: absolute;
+    left: 0;
+    height: 74%;
+    overflow: auto
+}
+li {
+    background-color: #F5F5F5;
+    padding: 5px;
+    margin: 5px 20px 15px 10px;
+    cursor: pointer;
+    width: 200px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 1px -2px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .12);
+}
+#photo-bar {
+    position: absolute;
+    bottom: 25px;
+    width: 100%
+}
+#photo-bar ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center
+}
+#photo-bar li {
+    display: inline;
+    padding: 0;
+    margin: 5px;
+    background-color: transparent;
+    color: transparent
+}
+#photo-bar img {
+    min-width: 50px;
+    max-width: 100px;
+    border-radius: 50%;
+    border: #F5F5F5 solid 3px;
+}
+.speciesName {
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 18px;
+    font-style: italic;
+    color: #009688
+}
+.taxon {
+    color: #626262;
+    margin: 4px 10px 8px;
+    font-size: 13px;
+}
+.commonNames {
+    font-size: 14px;
+    color: #3A3A3A;
+}
+.gm-style-iw p {
+    margin-bottom: 12px
+}
+#addNew {
+    position: absolute;
+    bottom: 25px;
+    right: 20px
+}
+#saveNew {
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+    background-color: #009688;
+    display: none
+}
+.mdl-textfield__input {
+    margin-left: 25px;
+    width: 175px
+}
+.mdl-textfield__label {
+    top: 20px
+}
+.mdl-textfield__label .material-icons {
+    top: 20px;
+    margin-left: -2px;
+}
+.mdl-textfield {
+    width: 200px;
+    margin: -20px 18px;
+    padding: 20px 0;
+}
+.mdl-layout__drawer {
+    overflow: hidden
+}
+.mdl-layout__drawer > .mdl-layout-title {
+    padding-left: 17px;
+}
+.filter {
+    padding: 0 15px 16px;
+    margin-top: -10px;
+}
+#newSightingInfoWindow {
+    display: none
+}
+.newName {
+    margin: -20px 3px;
+    padding: 0 24px;
+}
+.newName .mdl-textfield__label {
+    top: 3px;
+}
+#newName {
+    margin: 0 2px;
+    padding: 5px 2px;
+}
+#messages {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    display: none;
+}
+.dialog {
+    text-align: center
+}
+.dialog span {
+    padding: 20px 16px 22px 34px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+}
+.dialog span i {
+    background-color: rgb(202, 202, 202);
+    color: #F5F5F5;
+    border-radius: 50%;
+    padding: 2px;
+    margin: -8px -55px;
+    border: 11px solid #F5F5F5;
+    position: absolute;
+}
+#messageButton {
+    margin-left: 10px;
+}
+#readOnly {
+    position: absolute;
+    top: 69px;
+    right: 4px;
+    display: none;
+}
+#readOnly .dialog {
+    text-align: center;
+    width: 180px;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 12px;
+    padding: 6px;
+}
+.disabled {
+    background-color: rgba(210, 210, 210, 0.9);
+}
+#map-canvas h2 {
+    margin-top: 25%;
+    text-align: center;
+    color: #009688
+}
+@media only screen and (max-width: 400px) {
+    #photo-bar ul li:nth-child(n + 5) {
+        display: none;
+    }
+}
+@media only screen and (max-width: 720px) {
+    #photo-bar img {
+        width: 50px;
+        border: #F5F5F5 solid 2px;
+        margin-bottom: -10px;
+    }
+    .extract p {
+        display: none;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}

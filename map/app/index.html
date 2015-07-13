@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>P5: Neighbourhood Map - Sighting Notebook</title>
+    <!-- Material Design Lite: http://www.getmdl.io/ -->
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.teal-red.min.css" />
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css" type='text/css' inline>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+  </head>
+
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Sightings</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <!-- Navigation (empty for now) -->
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Filter by Species</span>
+        <p class="filter">Filter your sightings by
+          <em>names</em>or
+          <em>classifications</em>, for example: 'plant', 'insect' or 'robin'.</p>
+        <!-- Input field for filtering -->
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="sample1" pattern="[A-Z,a-z, ]*" data-bind="textInput: filterStr" placeholder="filter-list"
+          />
+          <label class="mdl-textfield__label" for="sample1">
+            <i class="material-icons">filter_list</i>
+          </label>
+          <span class="mdl-textfield__error">Please use letters and spaces only</span>
+        </div>
+        <div class="mdl-navigation">
+          <!--all list items and map markers are generated here-->
+          <ul id="filter-list" data-bind="foreach: filteredSpecies">
+            <li data-bind="event: {
+                click: $parent.listClick,
+                mouseover: $parent.mapMarkerBounce,
+                mouseout: $parent.mapMarkerPuncture
+              },
+              value: drawMapMarker()">
+              <p class="speciesName" data-bind="text: species">Species</p>
+              <p class="taxon" data-bind="text: taxon">Taxonomy</p>
+              <p class="commonNames" data-bind="text: commonNames">Common Names</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Not currently used, but required for MDL layout -->
+        </div>
+      </main>
+      <!-- Main Page content -->
+      <div id="map-canvas">
+        <h2>Loading Google Maps...</h2>
+      </div>
+      <div id="photo-bar">
+        <ul data-bind="foreach: photos">
+          <li data-bind="if: $data">
+            <a data-bind="attr: {href: $data.url, title: $data.title}">
+              <img data-bind="attr: {src: $data.src, alt: ''}">
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored
+        mdl-button--raised mdl-js-ripple-effect" id="saveNew">
+        <i class="material-icons">done</i>
+      </button>
+      <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent
+        mdl-button--raised mdl-js-ripple-effect" id="addNew">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+    <!-- Google Maps InfoWindow Snippets -->
+    <div id="newSightingInfoWindow">
+      <p>Move the marker to the location you want.</p>
+      <p class="mdl-textfield mdl-js-textfield textfield-demo newName">
+        <input class="mdl-textfield__input" type="text" id="newName" pattern="[A-Z,a-z, ]*" placeholder="Try 'Canis lupus'" />
+        <label class="mdl-textfield__label" for="sample1">
+          <i class="material-icons">add_circle</i>
+        </label>
+      </p>
+      <p>Enter a species name in
+        <a href="https://en.wikipedia.org/wiki/Binomial_nomenclature">
+        binomial</a>form.
+        <br>Try something like 'Rattus norvegicus'.
+        <br>Or dimiss this box, by clicking the cross.</p>
+    </div>
+    <!-- Messages  -->
+    <div id="messages">
+      <p class="dialog">
+        <span class="mdl-button--raised">
+          <i class="material-icons">done</i>
+          New <em>Firstname lastname</em> added.
+          <button class="mdl-button mdl-js-button mdl-button--primary" id="messageButton">undo</button>
+        </span>
+      </p>
+    </div>
+    <div id="readOnly">
+      <p class="dialog mdl-button--raised disabled">READ-ONLY MODE
+        <br>Adding new sightings is disabled because Wikipedia is unavailable</p>
+    </div>
+    <!-- The Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/views.js"></script>
+  </body>
+</html>
