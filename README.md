@@ -34,6 +34,7 @@ To download the source, clone from the following link:
 https://github.com/GeorgePlaten/fe-p5.git
 This project was developed using [vscode](https://code.visualstudio.com/) for which settings,
 tasks and typing definitions are included.
+You will find the project files in the map/app/ directory.
 
 ### Thanks to the following artists from the noun project
  - https://thenounproject.com/evanmacdonald

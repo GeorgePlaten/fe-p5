@@ -31,19 +31,20 @@
       </header>
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Filter by Species</span>
-        <p class="filter">Filter your sightings by
-          <em>names</em>or
+        <p class="filter">Filter your sightings by <em>names</em> or 
           <em>classifications</em>, for example: 'plant', 'insect' or 'robin'.</p>
+          
         <!-- Input field for filtering -->
         <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" id="sample1" pattern="[A-Z,a-z, ]*" data-bind="textInput: filterStr" placeholder="filter-list"
-          />
-          <label class="mdl-textfield__label" for="sample1">
+          <input class="mdl-textfield__input" type="text" id="filter" pattern="[A-Z,a-z, ]*"
+            data-bind="textInput: filterStr" placeholder="filter-list"/>
+          <label class="mdl-textfield__label" for="filter">
             <i class="material-icons">filter_list</i>
           </label>
           <span class="mdl-textfield__error">Please use letters and spaces only</span>
         </div>
         <div class="mdl-navigation">
+          
           <!--all list items and map markers are generated here-->
           <ul id="filter-list" data-bind="foreach: filteredSpecies">
             <li data-bind="event: {
@@ -64,6 +65,7 @@
           <!-- Not currently used, but required for MDL layout -->
         </div>
       </main>
+      
       <!-- Main Page content -->
       <div id="map-canvas">
         <h2>Loading Google Maps...</h2>
@@ -86,21 +88,23 @@
         <i class="material-icons">add</i>
       </button>
     </div>
+    
     <!-- Google Maps InfoWindow Snippets -->
     <div id="newSightingInfoWindow">
       <p>Move the marker to the location you want.</p>
       <p class="mdl-textfield mdl-js-textfield textfield-demo newName">
         <input class="mdl-textfield__input" type="text" id="newName" pattern="[A-Z,a-z, ]*" placeholder="Try 'Canis lupus'" />
-        <label class="mdl-textfield__label" for="sample1">
+        <label class="mdl-textfield__label" for="newName">
           <i class="material-icons">add_circle</i>
         </label>
       </p>
       <p>Enter a species name in
         <a href="https://en.wikipedia.org/wiki/Binomial_nomenclature">
-        binomial</a>form.
+        binomial</a> form.
         <br>Try something like 'Rattus norvegicus'.
         <br>Or dimiss this box, by clicking the cross.</p>
     </div>
+    
     <!-- Messages  -->
     <div id="messages">
       <p class="dialog">
@@ -115,9 +119,10 @@
       <p class="dialog mdl-button--raised disabled">READ-ONLY MODE
         <br>Adding new sightings is disabled because Wikipedia is unavailable</p>
     </div>
+    
     <!-- The Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+    <script src="scripts/knockout-latest.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/views.js"></script>
