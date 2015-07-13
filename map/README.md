@@ -5,7 +5,7 @@
 This app lets you make notes of an life-forms you might spot
 while out and about.
 
-** To add a new entry: **
+**To add a new entry:**
  1. click the 'add' (+) button
  2. drag the map marker to the desired location
  3. enter a species name and click 'done' (tick)
@@ -17,7 +17,7 @@ and some general information will be added. A batch of the
 latest related pictures from Flicr will be added too. To view
 all of this, select the newly added marker.
 
-** To browse and filter existing entries **
+**To browse and filter existing entries**
 
 Click or touch the 'more' menu icon to pull out a 
 filter list. Each species on the list may have one or
