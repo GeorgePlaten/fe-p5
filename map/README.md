@@ -6,9 +6,9 @@ This app lets you make notes of an life-forms you might spot
 while out and about.
 
 ** To add a new entry: **
-1. click the 'add' (+) button
-2. drag the map marker to the desired location
-3. enter a species name and click 'done' (tick)
+ 1. click the 'add' (+) button
+ 2. drag the map marker to the desired location
+ 3. enter a species name and click 'done' (tick)
 
 The name should be entered in binomial form. If the name is
 validated with Wikipedia it will then be added an some extra
