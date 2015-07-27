@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: KoViewModel</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: KoViewModel</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        KoViewModel
+        </h2>
+        
+            <div class="class-description">Defines the Knockout View Model</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="KoViewModel"><span class="type-signature"></span>new KoViewModel<span class="signature">(data)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Everything from <a href="app.data.html">app.data</a></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>filterStr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ko.observable(string)</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">String used to match and  filter in this.filteredSpecies</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tempFilterStr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Placeholder used by this.listClick()</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>speciesNames</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Shortlist of species names, used when adding,  checking and undoing new sightings and species.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>photos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ko.observableArray(Photo[])</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Placeholder for photos.  Values set by google.map.Marker click events: Sightings.select() and  Sightings.deselect()</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allSpecies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ko.observableArray(KoSpecies[])</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">All of the species  in the Knockout Viewmodel</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filteredSpecies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ko.computed(KoSpecies[])</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The items that populate  the list view. Filtered version of this.allSpecies (using filterStr)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="viewmodels.js.html">viewmodels.js</a>, <a href="viewmodels.js.html#line180">line 180</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="addNewSpecies"><span class="type-signature"></span>addNewSpecies<span class="signature">(binomial)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Add new koSpecies to app.koViewModel.allSpecies. Called byapp.saveNewSighting() if the species has not been recorded before.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>binomial</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">New species name in binomial format.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="viewmodels.js.html">viewmodels.js</a>, <a href="viewmodels.js.html#line245">line 245</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="listClick"><span class="type-signature"></span>listClick<span class="signature">(koSpecies)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Save any current string in the filter input when a list entry is clicked.Re-enters the string if the filter is cleared by a second click.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>koSpecies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">KoSpecies</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Species object from list item's KO click listener.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="viewmodels.js.html">viewmodels.js</a>, <a href="viewmodels.js.html#line209">line 209</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="mapMarkerBounce"><span class="type-signature"></span>mapMarkerBounce<span class="signature">(koSpecies)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Animate all species's sightings map markers
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>koSpecies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">KoSpecies</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Species object from list item's KO mouseover listener.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="viewmodels.js.html">viewmodels.js</a>, <a href="viewmodels.js.html#line222">line 222</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="mapMarkerPuncture"><span class="type-signature"></span>mapMarkerPuncture<span class="signature">(koSpecies)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Stop animation of all species's sightings map markers
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>koSpecies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">KoSpecies</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Species object from list item's KO mouseout listener.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="viewmodels.js.html">viewmodels.js</a>, <a href="viewmodels.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="global.KoSpecies.html">KoSpecies</a></li><li><a href="global.KoViewModel.html">KoViewModel</a></li><li><a href="global.Sighting.html">Sighting</a></li><li><a href="global.Species.html">Species</a></li></ul><h3>Namespaces</h3><ul><li><a href="app.html">app</a></li><li><a href="app.data.html">data</a></li><li><a href="app.gMapVM.html">gMapVM</a></li></ul><h3>Global</h3><ul><li><a href="global.html#customIcons">customIcons</a></li><li><a href="global.html#flickrRequest">flickrRequest</a></li><li><a href="global.html#getTaxon">getTaxon</a></li><li><a href="global.html#getWikimediaData">getWikimediaData</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#initBatchFlickrRequests">initBatchFlickrRequests</a></li><li><a href="global.html#initGmap">initGmap</a></li><li><a href="global.html#onCloseClick">onCloseClick</a></li><li><a href="global.html#parseWikiTaxoProp">parseWikiTaxoProp</a></li><li><a href="global.html#processFlickrData">processFlickrData</a></li><li><a href="global.html#processWikimediaData">processWikimediaData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a> on Mon Jul 27 2015 21:00:43 GMT+0100 (GMT Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

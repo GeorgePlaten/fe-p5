@@ -6,15 +6,16 @@ This app lets you make notes of an life-forms you might spot
 while out and about.
 
 **To add a new entry:**
- 1. click the 'add' (+) button
- 2. drag the map marker to the desired location
- 3. enter a species name and click 'done' (tick)
+
+1. click the 'add' (+) button
+2. drag the map marker to the desired location
+3. enter a species name and click 'done' (tick)
 
 The name should be entered in binomial form. If the name is
 validated with Wikipedia it will then be added an some extra
 information such as taxonomic classification, common names
 and some general information will be added. A batch of the
-latest related pictures from Flicr will be added too. To view
+latest related pictures from Flickr will be added too. To view
 all of this, select the newly added marker.
 
 **To browse and filter existing entries**
@@ -25,16 +26,18 @@ more sighting locations associated with it. You can filter
 the list my using binnomial names, classifications (such as
 'animal' or 'plant'), and common names.
 
-### View or get the code
+### View or get the code, read the Docs
 
-You can view an online copy of this project here:
+You can use an online copy of this project here:
 http://georgeplaten.github.io/fe-p5/map/dist/
+
+You can view the documentation and code here:
+http://georgeplaten.github.io/fe-p5/map/app/scripts/out/
 
 To download the source, clone from the following link:
 https://github.com/GeorgePlaten/fe-p5.git
 This project was developed using [vscode](https://code.visualstudio.com/) for which settings,
 tasks and typing definitions are included.
-You will find the project files in the map/app/ directory.
 
 ### Thanks to the following artists from the noun project
  - https://thenounproject.com/evanmacdonald

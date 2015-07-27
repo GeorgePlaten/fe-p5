@@ -150,6 +150,9 @@ var app = app || {};
         app.lastEntryMarker.setMap(null);
         app.viewModel.species().pop();
         delete app.data.species[app.viewModel.speciesNames.pop()];
+        // force a list refresh
+        app.viewModel.filterStr('//');
+        app.viewModel.filterStr('');
     };
 
     app.saveNewSighting = function () {
@@ -201,7 +204,7 @@ var app = app || {};
             $('.dialog').find('em').text(name);
             $('#messages').fadeIn();
             setTimeout(function () {$('#messages').fadeOut('slow');}, 5000);
-            // forces a list refresh
+            // force a list refresh
             app.viewModel.filterStr('//');
             app.viewModel.filterStr('');
         };
@@ -256,14 +259,14 @@ var app = app || {};
 
     };
 
-    // initialize google map
+    // initialize google map view model
     var initializeGmap = function () {
         app.map.map = new google.maps.Map(document.getElementById('map-canvas'),
             app.map.options);
     };
     google.maps.event.addDomListener(window, 'load', initializeGmap);
 
-    // initialize knockout js
+    // initialize knockout js view model
     window.onload = function () {
         app.viewModel = new ViewModel(app.data);
         ko.applyBindings(app.viewModel);

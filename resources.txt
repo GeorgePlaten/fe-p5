@@ -10,6 +10,8 @@ https://developer.mozilla.org/en-US/
 http://stackoverflow.com/questions/tagged/javascript
 http://www.getmdl.io/started/
 https://css-tricks.com/
+http://www.2ality.com/2011/08/jsdoc-intro.html
+http://usejsdoc.org/index.html
 https://thenounproject.com/
     https://thenounproject.com/evanmacdonald
     https://thenounproject.com/uffou

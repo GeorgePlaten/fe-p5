@@ -3,40 +3,44 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'PT Serif', Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-family: "PT Serif", Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    background-color: #ddd;
 }
-#map-canvas {
+
+.map-canvas {
     width: 100%;
     height: 100%;
 }
-body {
-    background-color: #ddd;
-}
-div {
+/*div {
     float: left;
+}*/
+
+.mdl-layout__obfuscator {
+    background-color: rgba(0, 0, 0, .14) !important;
 }
+
 h3 {
     font-size: 25px;
     line-height: 0;
     font-style: italic;
 }
+
 p,
 ul {
     margin: 2px;
     padding: 0;
     line-height: 18px;
 }
-ul {
+
+.filter-list {
     list-style: none;
     width: 255px;
-    height: 100%;
-}
-#filter-list {
     position: absolute;
     left: 0;
     height: 74%;
     overflow: auto;
 }
+
 li {
     background-color: #f5f5f5;
     padding: 5px;
@@ -45,30 +49,35 @@ li {
     width: 200px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 1px -2px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .12);
 }
-#photo-bar {
+
+.photo-bar {
     position: absolute;
     bottom: 25px;
     width: 100%;
 }
-#photo-bar ul {
-    width: 100%;
+
+.photo-bar ul {
     margin: 0;
     padding: 0;
+    width: 100%;
     text-align: center;
 }
-#photo-bar li {
+
+.photo-bar li {
     display: inline;
     padding: 0;
     margin: 5px;
     background-color: transparent;
     color: transparent;
 }
-#photo-bar img {
+
+.photo-bar img {
     min-width: 50px;
     max-width: 100px;
     border-radius: 50%;
     border: #f5f5f5 solid 3px;
 }
+
 .species-name {
     font-weight: bold;
     font-variant: small-caps;
@@ -76,87 +85,110 @@ li {
     font-style: italic;
     color: #009688;
 }
+
 .taxon {
     color: #626262;
     margin: 4px 10px 8px;
     font-size: 13px;
 }
+
 .common-names {
     font-size: 14px;
     color: #3a3a3a;
 }
+
 .gm-style-iw p {
     margin-bottom: 12px;
 }
-#add-new {
+
+.add-new {
     position: absolute;
     bottom: 25px;
     right: 20px;
 }
+
 #save-new {
+    /* use of id selector here is intentional (against the Style Guide but
+    required while the behavior fails to work using a class selector -
+    makes the button red, might be a chrome bug) */
     position: absolute;
     bottom: 25px;
     right: 20px;
     background-color: #009688;
     display: none;
 }
+
 .mdl-textfield__input {
     margin-left: 25px;
     width: 175px;
 }
+
 .mdl-textfield__label {
     top: 20px;
 }
+
 .mdl-textfield__label .material-icons {
     top: 20px;
     margin-left: -2px;
 }
+
 .mdl-textfield {
     width: 200px;
     margin: -20px 18px;
     padding: 20px 0;
 }
+
 .mdl-layout__drawer {
     overflow: hidden;
 }
+
 .mdl-layout__drawer > .mdl-layout-title {
     padding-left: 17px;
 }
+
 .filter {
     padding: 0 15px 16px;
     margin-top: -10px;
 }
-#new-sighting-info-window {
+
+.new-sighting-info-window {
     display: none;
 }
+
 .new-name {
     margin: -20px 3px;
     padding: 0 24px;
 }
+
 .new-name .mdl-textfield__label {
     top: 3px;
 }
-#new-name {
+
+.new-name input {
     margin: 0 2px;
     padding: 5px 2px;
 }
-#messages {
+
+.undo-dialog {
     width: 100%;
     position: absolute;
     top: 100px;
     display: none;
 }
-.dialog {
+
+.message {
     text-align: center;
 }
-.dialog span {
+
+.message span {
     padding: 20px 16px 22px 34px;
     background-color: #f5f5f5;
     border-radius: 4px;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     font-size: 16px;
 }
-.dialog span i {
+
+.message span i {
     background-color: rgb(202, 202, 202);
     color: #f5f5f5;
     border-radius: 50%;
@@ -165,44 +197,66 @@ li {
     border: 11px solid #f5f5f5;
     position: absolute;
 }
-#message-button {
+
+.message-button {
     margin-left: 10px;
 }
-#read-only {
-    position: absolute;
-    top: 69px;
-    right: 4px;
-    display: none;
-}
-#read-only .dialog {
-    text-align: center;
-    width: 180px;
-    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-    font-size: 12px;
-    padding: 6px;
-}
+
 .disabled {
     background-color: rgba(210, 210, 210, 0.9);
 }
-#map-canvas h2 {
+
+.map-canvas h2 {
     margin-top: 25%;
     text-align: center;
     color: #009688;
 }
+
+.ajax-status {
+    display: block;
+    opacity: 0.4;
+}
+
+.wikipedia-fail span {
+    font-variant: small-caps;
+    font-size: 18px;
+}
+
+.mdl-tooltip--large {
+    max-width: 190px;
+    text-align: left;
+    margin-left: -150px !important;
+    top: 80px !important;
+}
+
+.read-only {
+    color: #FF5252;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.flickr-failed {
+    opacity: 1;
+}
+
 @media only screen and (max-width: 400px) {
-    #photo-bar ul li:nth-child(n + 5) {
+    .photo-bar ul li:nth-child(n + 5) {
         display: none;
     }
 }
+
 @media only screen and (max-width: 720px) {
-    #photo-bar img {
+    .photo-bar img {
         width: 50px;
         border: #f5f5f5 solid 2px;
         margin-bottom: -10px;
     }
+
     .extract p {
         display: none;
     }
+
     h3 {
         font-size: 18px;
     }
