@@ -129,6 +129,11 @@
      * @memberof global
      */
     var KoSpecies = function (species) {
+        
+        // Intentionally avoiding the standard practice use of 'var self = this;' here.
+        // Style copied from:
+        // https://github.com/tastejs/todomvc/blob/gh-pages/examples/knockoutjs/js/app.js
+        // And kept here to help me develop of a better understanding of context.
         this.binomial = species.binomial;
         this.keywords = species.keywords.toLowerCase();
         this.commonNames = (species.wm) ? 'Also known as: ' +

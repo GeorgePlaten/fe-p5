@@ -28,12 +28,19 @@ var app = app || {};
     /**
      * API Keys
      * @field {object}
-     * memberof app
+     * @memberof app
      */
     app.apikeys = {
         FLICKR: 'e9648afe7558db322364fbe75507a46f',
         gmaps: ''
     };
+    
+     /**
+      * Custom icon image paths for preloading
+      * @field {string[]}
+      * @memberof app
+      */
+     app.images = [];
 
     /**
      * Save New Entry.
@@ -198,5 +205,44 @@ var app = app || {};
     $('#message-button').on({'click': function () {
         app.undoLastEntry();
     }});
+    
+    /**
+     * Respond to Connectivity Dropped Event
+     * Using Offline.js library from https://github.com/hubspot/offline
+     * with default settings.
+     */
+    Offline.on('confirmed-down', function () {
+        
+        // Update the UI info mdl-tooltip, update status for both Flickr and Wikipedia
+        $('.all-fail').show();
+        $('.wikipedia-ok').hide();
+        $('.wikipedia-fail').show();
+        $('.ajax-status').addClass('read-only');
+        $('.flickr-ok').hide();
+        $('.flickr-fail').show();
+        
+        // disable adding new items (Wikipedia can't verify the species name)
+        $('#add-new').prop('disabled', true).removeClass('mdl-button--accent');
+    });
+
+    
+    /**
+     * Respond to Connectivity Reopened Event
+     * Using Offline.js library from https://github.com/hubspot/offline
+     * with default settings.
+     */
+     Offline.on('confirmed-up', function () {
+        
+        // Update the UI info mdl-tooltip, update status for both Flickr and Wikipedia
+        $('.all-fail').hide();
+        $('.wikipedia-fail').hide();
+        $('.wikipedia-ok').show();
+        $('.ajax-status').removeClass('read-only');
+        $('.flickr-fail').hide();
+        $('.flickr-ok').show();
+        
+        // Enable adding new items (Wikipedia can't verify the species name)
+        $('#add-new').prop('disabled', false).addClass('mdl-button--accent');
+    });
 
 })();

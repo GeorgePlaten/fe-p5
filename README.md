@@ -18,6 +18,11 @@ and some general information will be added. A batch of the
 latest related pictures from Flickr will be added too. To view
 all of this, select the newly added marker.
 
+TIP: Sometimes you may need to experiment with names, for
+example '*Canis familiarus*' and '*Amphiprioninae*' will work
+even though the accepted name for a dog is
+'*Canis lupus familiaris*', and the fish is in monomial form.
+
 **To browse and filter existing entries**
 
 Click or touch the 'more' menu icon to pull out a 

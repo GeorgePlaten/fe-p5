@@ -13,8 +13,11 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- inline boolean attribute is stripped in build process, then the link tag is replaced
+      with a minified form of the style sheet, w3 validation OK in distibution -->
     <link rel="stylesheet" href="styles/style.css" inline>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.20"></script>
   </head>
 
   <body>
@@ -27,14 +30,16 @@
 
           <!-- Ajax Status Indicator -->
           <div id="ajax-status" class="ajax-status icon material-icons">info_outline</div>
-          <div class="mdl-tooltip mdl-tooltip--large" for="ajax-status">
+          <span class="mdl-tooltip mdl-tooltip--large" for="ajax-status">
+            <p class="all-fail"><span>OFFLINE </span>Trying to re-establish a connection...</p>
+            <hr class="all-fail">
             <p class="wikipedia-ok">Wikipedia connected: OK</p>
             <p class="wikipedia-fail"><span>Read-only mode</span><br>
               failed to reach Wikipedia.</p>
             <hr>
             <p class="flickr-ok">Flickr connected: OK</p>
-            <p class="flickr-fail">Some or all photos will be unavailable due to connection difficulties with Flickr.</p>
-          </div>
+            <p class="flickr-fail">Some or all photos may be unavailable due to connection difficulties with Flickr.</p>
+          </span>
 
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <!-- Navigation (empty for now) -->
@@ -87,7 +92,7 @@
         <ul data-bind="foreach: photos">
           <li data-bind="if: $data">
             <a data-bind="attr: {href: $data.url, title: $data.title}">
-              <img data-bind="attr: {src: $data.src, alt: ''}">
+              <img data-bind="attr: {src: $data.src, alt: ''}" src="" alt="">
             </a>
           </li>
         </ul>
@@ -133,6 +138,7 @@
 
     <!-- The Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="scripts/offline.min.js"></script>
     <script src="scripts/knockout-latest.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/data.js"></script>
