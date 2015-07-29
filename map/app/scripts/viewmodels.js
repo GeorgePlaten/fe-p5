@@ -96,6 +96,7 @@
     var onCloseClick = function () {
         $('#add-new').fadeIn();
         app.gMapVM.infowindow.setContent('');
+        $('.photo-bar').addClass('display-none');
         app.koViewModel.photos(null);
         app.currentSighting.deselect(true);
         app.currentSighting = '';

@@ -13,6 +13,7 @@ https://css-tricks.com/
 http://www.2ality.com/2011/08/jsdoc-intro.html
 http://usejsdoc.org/index.html
 https://thenounproject.com/
+https://css-tricks.com/snippets/css/font-shorthand/
 https://github.com/hubspot/offline
 https://craigshoemaker.github.io/offlinejs-simulate-ui/
 https://perishablepress.com/3-ways-preload-images-css-javascript-ajax/

@@ -53,6 +53,10 @@ li {
     width: 100%;
 }
 
+.display-none {
+    display: none;
+}
+
 .photo-bar ul {
     margin: 0;
     padding: 0;
@@ -74,6 +78,7 @@ li {
 }
 
 .species-name {
+    /* note: can not use shorthand without font-family */
     font-weight: bold;
     font-variant: small-caps;
     font-size: 18px;

@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.teal-red.min.css" rel="stylesheet">
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+    <script src="scripts/material.min.js"></script>
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -30,7 +30,7 @@
 
           <!-- Ajax Status Indicator -->
           <div id="ajax-status" class="ajax-status icon material-icons">info_outline</div>
-          <span class="mdl-tooltip mdl-tooltip--large" for="ajax-status">
+          <div class="mdl-tooltip mdl-tooltip--large" title="ajax-status">
             <p class="all-fail"><span>OFFLINE </span>Trying to re-establish a connection...</p>
             <hr class="all-fail">
             <p class="wikipedia-ok">Wikipedia connected: OK</p>
@@ -39,7 +39,7 @@
             <hr>
             <p class="flickr-ok">Flickr connected: OK</p>
             <p class="flickr-fail">Some or all photos may be unavailable due to connection difficulties with Flickr.</p>
-          </span>
+          </div>
 
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <!-- Navigation (empty for now) -->
@@ -88,11 +88,11 @@
         <h2>Loading Google Maps...</h2>
       </div>
 
-      <div class="photo-bar">
+      <div class="photo-bar display-none">
         <ul data-bind="foreach: photos">
-          <li data-bind="if: $data">
+          <li>
             <a data-bind="attr: {href: $data.url, title: $data.title}">
-              <img data-bind="attr: {src: $data.src, alt: ''}" src="" alt="">
+              <img data-bind="attr: {src: $data.src, alt: ''}" src="images/none.png" alt="">
             </a>
           </li>
         </ul>

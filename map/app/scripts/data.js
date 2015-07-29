@@ -244,8 +244,9 @@
         recenter && app.gMapVM.map.panTo(app.gMapVM.mapOptions.center);
         // if the marker has a custom icon, set it to the unselected version
         this.marker.getIcon() && this.marker.setIcon(this.marker.icons.unselected);
-        // clear the photos from KO view model photos array
+        // clear the photos from KO view model and re-hide the container
         app.koViewModel.photos(null);
+        $('.photo-bar').addClass('display-none');
     };
 
     /**
@@ -260,8 +261,9 @@
         app.currentSighting = this;
         // if the sighting has a custom marker, set it to the selected version
         this.marker.getIcon() && this.marker.setIcon(this.marker.icons.selected);
-        // Populate the KO view model photos with the species pictures
+        // Populate the KO view model photos with the species pictures and show
         app.koViewModel.photos(app.data.species[this.name].pics);
+        $('.photo-bar').removeClass('display-none');
     };
 
 
